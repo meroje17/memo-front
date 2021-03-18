@@ -2,8 +2,6 @@
     transform: scale(1.03);
 }
 
-/* 60 px sinon */
-
 .active, .true, .false, .inactive {
     height: 50px;
     width: 50px;

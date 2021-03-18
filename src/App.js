@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,12 +10,16 @@ import Game from "./components/game/Game";
 import Notfound from "./components/notfound/Notfound";
 
 function App() {
+  const [user, setUser] = useState();
+
+  const userChange = name => setUser(name);
+
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home debutGame={userChange} />
           </Route>
           <Route path="/game">
             <Game />

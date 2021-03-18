@@ -1,0 +1,101 @@
+.websiteTitle {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 200px;
+    margin-right: 20px;
+}
+
+.green {
+    color: #7bed9f;
+}
+
+.white {
+    color: #f1f2f6;
+}
+
+.gradient {
+    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-color: transparent;
+}
+
+.home {
+    height: 95vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.baner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.centered {
+    text-align: center;
+}
+
+.description {
+    display: block;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 2em;
+    color: #f1f2f6;
+}
+
+.subtitle {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 26px;
+    color: #7bed9f;
+}
+
+.bold {
+    font-weight: 400;
+}
+
+.nickname {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 35px;
+}
+.input {
+    width: 450px;
+    height: 35px;
+    background-color: #f1f2f6;
+    outline: none;
+    border: 1px solid #747d8c;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 20px;
+    color: #2f3542;
+}
+.input::placeholder {
+    color: #9CA3AF;
+}
+
+.button {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #747d8c;
+    color: #2f3542;
+    border: 1px solid #2f3542;
+    outline: none;
+}
+button:hover {
+    transform: scale(1.02);
+    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
+}
