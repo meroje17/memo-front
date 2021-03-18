@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import Case from "../case/Case";
 
-const Home = ({ debutGame }) => {
+const Home = ({ debutGame, onError }) => {
     const [caseType, setCaseType] = useState("inactive");
     const [name, setName] = useState();
 
@@ -16,9 +16,7 @@ const Home = ({ debutGame }) => {
         }
     }
 
-    const error = message => {
-        // FAIRE SYSTEM ERROR dans composant parent
-    }
+    const error = message => onError(message);
 
     useEffect(() => {
         const timer = setInterval(() => {

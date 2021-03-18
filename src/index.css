@@ -47,6 +47,8 @@ table {
 	border-spacing: 0;
 }
 * {
-	background-color: #2f3542;
 	overflow: hidden;
+}
+body {
+	background-color: #2f3542;
 }
