@@ -1,0 +1,27 @@
+.inactive:hover {
+    transform: scale(1.03);
+}
+
+/* 60 px sinon */
+
+.active, .true, .false, .inactive {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.inactive {
+    background-color: #747d8c;
+}
+
+.true, .false, .active {
+    box-shadow: 0px 0px 10px #f1f2f6;
+}
+
+.true, .active {
+    background-color: #7bed9f;
+}
+
+.false {
+    background-color: #ff4757;
+}
