@@ -36,7 +36,7 @@ const Home = ({ debutGame, onError }) => {
                 <span className={styles.gradient}>EM</span>
                 <span className={styles.white}>O</span>
             </h1>
-            <Case type={caseType} />
+            <Case type={caseType} height={45} width={45} />
         </div>
         <div className={styles.centered}>
             <h3 className={styles.description}>Prêt à affronter vos amis, votre famille et même des inconnus ?</h3>

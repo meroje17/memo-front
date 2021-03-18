@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Case.module.css";
 
-const Case = ({ type }) => {
+const Case = ({ type, height, width }) => {
     const style = () => {
         switch (type) {
             case "active":
@@ -17,7 +17,7 @@ const Case = ({ type }) => {
         }
     }
 
-    return <div className={style()} />
+    return <div style={{ height, width }} className={style()} />
 }
 
 export default Case;

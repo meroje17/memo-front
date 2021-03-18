@@ -8,19 +8,13 @@ import {
 import Home from "./components/home/Home";
 import Game from "./components/game/Game";
 import Notfound from "./components/notfound/Notfound";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toaster } from "evergreen-ui";
 
 function App() {
   const [user, setUser] = useState();
 
   const userChange = name => setUser(name);
-  const error = message => toast("❎" + message, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: true,
-    closeOnClick: true,
-  })
+  const error = message => toaster.danger("Erreur", { description: message })
 
   return (
     <div className="App">
@@ -37,7 +31,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <ToastContainer />
     </div>
   );
 }

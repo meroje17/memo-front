@@ -1,7 +1,7 @@
 .websiteTitle {
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
-    font-size: 200px;
+    font-size: 150px;
     margin-right: 20px;
 }
 
@@ -46,7 +46,7 @@
     display: block;
     font-family: 'Roboto Mono', monospace;
     font-weight: 100;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 2em;
     color: #f1f2f6;
 }
@@ -54,7 +54,7 @@
 .subtitle {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 24px;
     color: #7bed9f;
 }
 
@@ -78,7 +78,7 @@
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
     color: #2f3542;
 }
 .input::placeholder {
@@ -88,15 +88,15 @@
 .button {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    font-size: 22px;
-    padding: 8px 16px;
+    font-size: 20px;
+    padding: 10px 20px;
     border-radius: 8px;
     background-color: #747d8c;
     color: #2f3542;
     border: 1px solid #2f3542;
     outline: none;
 }
-button:hover {
+.button:hover {
     transform: scale(1.02);
     background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
 }
