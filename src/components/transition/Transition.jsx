@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Transition.module.css";
 
-const Transition = ({ launch, setLaunch }) => {
+const Transition = ({ launch, launchAnimation }) => {
     const [blockOne, setBlockOne] = useState(styles.blockOneInactive);
     const [blockTwo, setBlockTwo] = useState(styles.blockTwoInactive);
     const [blockThree, setBlockThree] = useState(styles.blockThreeInactive);
@@ -12,11 +12,11 @@ const Transition = ({ launch, setLaunch }) => {
             openTransition()
             const timer = setTimeout(() => {
                 closeTransition()
-                setLaunch(false);
+                launchAnimation(false);
             }, 2400);
             return () => clearTimeout(timer);
         }
-    }, [launch, setLaunch])
+    }, [launch, launchAnimation])
 
     const openTransition = () => {
         setBlockOne(styles.blockOneActive)

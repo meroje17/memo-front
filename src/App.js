@@ -23,14 +23,14 @@ function App() {
             <Home debutGame={userChange} onError={error} setLaunch={setLaunch} />
           </Route>
           <Route path="/game">
-            <Game />
+            <Game user={user} launchAnimation={setLaunch}/>
           </Route>
           <Route path="*">
             <Notfound />
           </Route>
         </Switch>
       </Router>
-      <Transition launch={launch} setLaunch={setLaunch} />
+      <Transition launch={launch} launchAnimation={setLaunch} />
     </div>
   );
 }
