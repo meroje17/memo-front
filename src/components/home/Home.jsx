@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import Case from "../case/Case";
 
-const Home = ({ debutGame, onError }) => {
+const Home = ({ debutGame, onError, setLaunch }) => {
     const [caseType, setCaseType] = useState("inactive");
     const [name, setName] = useState();
 
@@ -12,6 +12,7 @@ const Home = ({ debutGame, onError }) => {
         } else if (name.trim() === "") {
             error("Votre surnom ne peux pas être rempli que d'espace, choisissez un autre surnom.");
         } else {
+            setLaunch(true);
             debutGame(name);
         }
     }
