@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import styles from "./Home.module.css";
 import Case from "../case/Case";
 
 const Home = ({ debutGame, onError, setLaunch }) => {
     const [caseType, setCaseType] = useState("inactive");
     const [name, setName] = useState();
+    let history = useHistory();
 
     const validate = () => {
         if (!name) {
@@ -14,6 +16,9 @@ const Home = ({ debutGame, onError, setLaunch }) => {
         } else {
             setLaunch(true);
             debutGame(name);
+            setTimeout(() => {
+                history.push("/game");
+            }, 2400);
         }
     }
 

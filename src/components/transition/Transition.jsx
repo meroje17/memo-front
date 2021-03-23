@@ -13,7 +13,7 @@ const Transition = ({ launch, setLaunch }) => {
             const timer = setTimeout(() => {
                 closeTransition()
                 setLaunch(false);
-            }, 2600);
+            }, 2400);
             return () => clearTimeout(timer);
         }
     }, [launch, setLaunch])

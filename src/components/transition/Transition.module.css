@@ -52,17 +52,17 @@
 
 .blockTwoActive {
     width: 0;
-    animation: open 1s 0.2s linear forwards;
+    animation: open 1s 0.15s linear forwards;
 }
 
 .blockThreeActive {
     width: 0;
-    animation: open 1s 0.4s linear forwards;
+    animation: open 1s 0.3s linear forwards;
 }
 
 .blockFourActive {
     width: 0;
-    animation: open 1s 0.6s linear forwards;
+    animation: open 1s 0.45s linear forwards;
 }
 
 .blockOneClose {
@@ -70,15 +70,15 @@
 }
 
 .blockTwoClose {
-    animation: close 1s 0.2s linear forwards;
+    animation: close 1s 0.15s linear forwards;
 }
 
 .blockThreeClose {
-    animation: close 1s 0.4s linear forwards;
+    animation: close 1s 0.3s linear forwards;
 }
 
 .blockFourClose {
-    animation: close 1s 0.6s linear forwards;
+    animation: close 1s 0.45s linear forwards;
 }
 
 @keyframes open {
