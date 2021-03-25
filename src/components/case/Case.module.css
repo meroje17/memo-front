@@ -1,12 +1,12 @@
-.inactive:hover {
-    transform: scale(1.03);
+.selectionable:hover, .active {
+    transform: scale(1.02);
 }
 
-.active, .true, .false, .inactive {
+.active, .true, .false, .inactive, .selectionable {
     border-radius: 10px;
 }
 
-.inactive {
+.inactive, .selectionable {
     background-color: #747d8c;
 }
 
@@ -20,4 +20,8 @@
 
 .false {
     background-color: #ff4757;
+}
+
+.inactive {
+    pointer-events: none;
 }
