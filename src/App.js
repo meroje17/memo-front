@@ -23,7 +23,7 @@ function App() {
             <Home debutGame={userChange} onError={error} setLaunch={setLaunch} />
           </Route>
           <Route path="/game">
-            <Game user={user} launchAnimation={setLaunch}/>
+            <Game user={user} />
           </Route>
           <Route path="*">
             <Notfound />
