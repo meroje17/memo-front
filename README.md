@@ -7,4 +7,3 @@ Pour la partie **front** du site *Memo*, nous utilisons les technologies suivant
 - ReactJS
 - CSS
 - React Router
-- Evergeen

@@ -81,17 +81,14 @@ const Game = ({ user }) => {
       if (result.length === newIndexChoice) {
         setIndexChoice(0);
         dispatch(actions.addPoint);
-        console.log("Victoire 😀");
       }
     } else {
-      console.log("Défaite 😒");
       setInProgress(false);
       setCases("inactive");
       setGameStyle(styles.gameOne);
       setResult([]);
       setIndexChoice(0);
       setIndexLight(0);
-      // Pensez à mettre case à false
     }
   };
 
