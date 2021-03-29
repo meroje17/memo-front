@@ -2,7 +2,6 @@ import React, { useReducer, useEffect, useState, useLayoutEffect } from "react";
 import styles from "./Game.module.css";
 import Case from "../case/Case";
 import Avatar from "../../ressources/user.svg";
-import { Pill, Badge } from "evergreen-ui";
 import { useHistory } from "react-router-dom";
 import { initialValue, actions } from "../../utils/constant";
 import { reducer, randomCase } from "./Game.utils";
@@ -161,8 +160,8 @@ const Game = ({ user }) => {
       <div className={styles.profil}>
         <img className={styles.avatar} src={Avatar} alt="avatar" />
         <div className={styles.ranking}>
-          <div className={styles.points}>{state.score} PTS</div>
           <div className={styles.level}>Niveau {state.level}</div>
+          <div className={styles.points}>{state.score} PTS</div>
         </div>
       </div>
       <div className={gameStyle}>

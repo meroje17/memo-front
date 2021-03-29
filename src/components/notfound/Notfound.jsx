@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./Notfound.module.css";
-import { Spinner } from "evergreen-ui";
+import spinner from "../../ressources/spinner.svg";
 import { useHistory } from "react-router-dom";
 
 const Notfound = () => {
@@ -21,7 +21,7 @@ const Notfound = () => {
         </h2>
         <h3 className={styles.subtitle}>Error</h3>
         <p className={styles.explain}>Oups... Vous allez être redirigé vers l'accueil.</p>
-        <Spinner size={50} />
+        <img className={styles.spinner} src={spinner} />
     </div>
 }
 

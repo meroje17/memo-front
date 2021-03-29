@@ -60,6 +60,7 @@
     font-weight: 400;
     font-size: 24px;
     color: #7bed9f;
+    margin-bottom: 35px;
 }
 
 .bold {
@@ -70,21 +71,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 35px;
 }
 
-.input {
+.input, .inputError {
     width: 450px;
     height: 35px;
     background-color: #f1f2f6;
     outline: none;
-    border: 1px solid #747d8c;
     border-radius: 5px;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 18px;
     color: #2f3542;
+    margin-bottom: 8px;
+}
+
+.input {
+    border: 1px solid #747d8c;
+}
+
+.inputError {
+    border: 2px solid #ff4757;
 }
 
 .input::placeholder {
@@ -111,6 +119,14 @@
 .nickname, .button {
     opacity: 0;
     animation: topAppear 2s ease-out 1.8s forwards;
+}
+
+.error {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ff4757;
+    font-style: italic;
 }
 
 @keyframes topAppear {

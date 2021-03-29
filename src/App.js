@@ -5,7 +5,6 @@ import Home from "./components/home/Home";
 import Game from "./components/game/Game";
 import Transition from "./components/transition/Transition";
 import Notfound from "./components/notfound/Notfound";
-import { toaster } from "evergreen-ui";
 
 function App() {
   const [user, setUser] = useState();
@@ -13,14 +12,12 @@ function App() {
 
   const userChange = name => setUser(name);
   
-  const error = message => toaster.danger("Erreur", { description: message })
-
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home debutGame={userChange} onError={error} setLaunch={setLaunch} />
+            <Home debutGame={userChange} setLaunch={setLaunch} />
           </Route>
           <Route path="/game">
             <Game user={user} />

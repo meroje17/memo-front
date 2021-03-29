@@ -3,12 +3,16 @@ import { useHistory } from "react-router-dom";
 import styles from "./Home.module.css";
 import Case from "../case/Case";
 
-const Home = ({ debutGame, onError, setLaunch }) => {
+const Home = ({ debutGame, setLaunch }) => {
     const [caseType, setCaseType] = useState("inactive");
     const [name, setName] = useState();
+    const [errorMessage, setErrorMessage] = useState();
+    const [inputStyle, setInputStyle] = useState(styles.input);
     let history = useHistory();
 
     const validate = () => {
+        setErrorMessage();
+        setInputStyle(styles.input);
         if (!name) {
             error("Vous devez écrire un surnom pour pouvoir jouer.");
         } else if (name.trim() === "") {
@@ -22,7 +26,10 @@ const Home = ({ debutGame, onError, setLaunch }) => {
         }
     }
 
-    const error = message => onError(message);
+    const error = message => {
+        setErrorMessage(message);
+        setInputStyle(styles.inputError);
+    }
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -55,8 +62,11 @@ const Home = ({ debutGame, onError, setLaunch }) => {
                 id="nickname" 
                 placeholder="Entrez votre surnom" 
                 onChange={(event) => setName(event.target.value)} 
-                className={styles.input} 
+                className={inputStyle} 
             />
+            {errorMessage &&
+                <p className={styles.error}>{errorMessage}</p>
+            }
         </div>
         <button className={styles.button} onClick={validate}>Commencer</button>
     </div>
