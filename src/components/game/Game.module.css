@@ -14,16 +14,11 @@
     margin-bottom: 5px;
 }
 
-.level {
-    text-align: center;
-    padding: 5px 10px;
-    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
-    border-radius: 10px;
-    color: #2f3542;
+.username {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    font-size: 13px;
-    margin-bottom: 4px;
+    font-size: 18px;
+    color: #f1f2f6;
 }
 
 .points {
@@ -34,7 +29,7 @@
     color: #2f3542;
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .gameOne,
@@ -89,22 +84,56 @@
 .infos {
     position: absolute;
     bottom: 40px;
-    left: 40px
+    left: 40px;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    row-gap: 20px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3em;
+    color: #2f3542;
+    border: 2px solid #747d8c;
+    border-radius: 10px;
+    padding: 40px 15px 15px 15px;
+    background-color: #f1f2f6;
 }
 
 .button {
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     padding: 10px 15px;
     border-radius: 8px;
-    background-color: #747d8c;
+    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
     color: #2f3542;
-    border: 1px solid #2f3542;
+    border: 2px solid #747d8c;
     outline: none;
 }
 
 .button:hover {
     transform: scale(1.02);
+}
+
+.logo {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 18px;
+    color: #2f3542;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #747d8c;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
+    box-shadow: 0px 0px 5px #2f3542;
+    overflow: visible;
+    position: absolute;
+    top: -20px;
 }

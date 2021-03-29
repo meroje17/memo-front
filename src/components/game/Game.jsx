@@ -159,10 +159,8 @@ const Game = ({ user }) => {
     <div className={styles.gameContainer}>
       <div className={styles.profil}>
         <img className={styles.avatar} src={Avatar} alt="avatar" />
-        <div className={styles.ranking}>
-          <div className={styles.level}>Niveau {state.level}</div>
-          <div className={styles.points}>{state.score} PTS</div>
-        </div>
+        <h2 className={styles.username}>{user}</h2>
+        <h3 className={styles.points}>{state.score} PTS</h3>
       </div>
       <div className={gameStyle}>
         {cases === "inactive" && inactiveCases()}
@@ -170,11 +168,15 @@ const Game = ({ user }) => {
         {cases === "userTurn" && userCases()}
       </div>
       {!inProgress && (
-        <div className={styles.infos}>
-          <button className={styles.button} onClick={() => debutGame()}>
-            Commencer
-          </button>
-        </div>
+          <div className={styles.infos}>
+            <span className={styles.logo}>i</span>
+            Le but du jeu est de mémoriser les cases qui s'allument afin de
+            reproduire l'ordre par la suite. À chaque bon résultat, vous gagnez
+            un point et le niveau d'après commence. Bonne chance !
+            <button className={styles.button} onClick={() => debutGame()}>
+              Commencer
+            </button>
+          </div>
       )}
     </div>
   );
