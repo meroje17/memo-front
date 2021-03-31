@@ -5,7 +5,8 @@ export function reducer(state, action) {
     case "ADD_POINT":
       return { ...state, score: state.score + 1 };
     case "CHANGE_LEVEL":
-      const nextLevel = state.level + 1;
+      const nextLevel = state.level;
+      if (state.level < 35) nextLevel++; 
       return {
         ...state,
         nbCase: levels[nextLevel].case,
