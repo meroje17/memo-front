@@ -109,7 +109,7 @@
     font-size: 15px;
     padding: 10px 15px;
     border-radius: 8px;
-    background-color: #7bed9f;
+    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
     color: #2f3542;
     border: 1px solid #747d8c;
     outline: none;
