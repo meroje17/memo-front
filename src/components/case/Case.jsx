@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Case.module.css";
+import success from "../../ressources/success.svg";
 
 const Case = ({ type, height, width, onClick, id }) => {
     const style = () => {
@@ -8,8 +9,6 @@ const Case = ({ type, height, width, onClick, id }) => {
                 return styles.active;
             case "true":
                 return styles.true;
-            case "false":
-                return styles.false;
             case "inactive":
                 return styles.inactive;
             case "selectionable":
@@ -19,7 +18,11 @@ const Case = ({ type, height, width, onClick, id }) => {
         }
     }
 
-    return <div id={id} onClick={onClick} style={{ height, width }} className={style()} />
+    return <div id={id} onClick={onClick} style={{ height, width }} className={style()}>
+        {type === "true" &&
+            <img src={success} alt="success" className={styles.success} />
+        }
+    </div>
 }
 
 export default Case;

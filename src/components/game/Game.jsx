@@ -1,7 +1,8 @@
 import React, { useReducer, useEffect, useState, useLayoutEffect } from "react";
 import styles from "./Game.module.css";
 import Case from "../case/Case";
-import Avatar from "../../ressources/user.svg";
+import avatar from "../../ressources/user.svg";
+import finish from "../../ressources/finish.svg";
 import { useHistory } from "react-router-dom";
 import { initialValue, actions } from "../../utils/constant";
 import { reducer, randomCase } from "./Game.utils";
@@ -14,6 +15,8 @@ const Game = ({ user }) => {
   const [indexChoice, setIndexChoice] = useState(0);
   const [indexLight, setIndexLight] = useState(0);
   const [inProgress, setInProgress] = useState(false);
+  const [caseSelected, setCaseSelected] = useState();
+  const [end, setEnd] = useState([false, 0]);
   let history = useHistory();
 
   useEffect(() => {
@@ -21,9 +24,16 @@ const Game = ({ user }) => {
   }, [history, user]);
 
   useEffect(() => {
-    const modulo = state.score % 5;
-    if (modulo === 0 && state.score !== 0) dispatch(actions.changeLevel);
     if (state.score !== 0) turnIA();
+  }, [state.level]);
+
+  useEffect(() => {
+    const modulo = state.score % 5;
+    if (modulo === 0 && state.score !== 0) {
+      dispatch(actions.changeLevel);
+    } else if (state.score !== 0) {
+      turnIA();
+    }
   }, [state.score]);
 
   useEffect(() => {
@@ -50,7 +60,6 @@ const Game = ({ user }) => {
   }, [state.nbCase]);
 
   const debutGame = () => {
-    dispatch(actions.reset);
     turnIA();
     setInProgress(true);
   };
@@ -75,22 +84,30 @@ const Game = ({ user }) => {
   };
 
   const validate = (id) => {
+    setCaseSelected(parseInt(id));
     if (parseInt(id) === result[indexChoice]) {
       const newIndexChoice = indexChoice + 1;
       setIndexChoice(newIndexChoice);
+      setCases("true");
       if (result.length === newIndexChoice) {
         setIndexChoice(0);
         dispatch(actions.addPoint);
       }
     } else {
-      setInProgress(false);
-      setCases("inactive");
+      setEnd([true, state.score]);
       setGameStyle(styles.gameOne);
       setResult([]);
       setIndexChoice(0);
       setIndexLight(0);
+      setCases("inactive");
+      dispatch(actions.reset);
     }
   };
+
+  const reset = () => {
+    setInProgress(false);
+    setEnd([false, 0]);
+  }
 
   const userCases = () => {
     let casesArray = [];
@@ -152,10 +169,38 @@ const Game = ({ user }) => {
     return casesArray;
   };
 
+  const selectedCases = () => {
+    let casesArray = [];
+    for (let index = 0; index < state.nbCase; index++) {
+      if (index === caseSelected) {
+        casesArray.push(
+          <Case
+            height={state.caseSize}
+            width={state.caseSize}
+            type="true"
+            key={caseSelected}
+          />
+        );
+      } else {
+        casesArray.push(
+          <Case
+            onClick={(event) => validate(event.target.id)}
+            height={state.caseSize}
+            width={state.caseSize}
+            type="selectionable"
+            key={index}
+            id={index}
+          />
+        );
+      }
+    }
+    return casesArray;
+  };
+
   return (
     <div className={styles.gameContainer}>
       <div className={styles.profil}>
-        <img className={styles.avatar} src={Avatar} alt="avatar" />
+        <img className={styles.avatar} src={avatar} alt="avatar" />
         <h2 className={styles.username}>{user}</h2>
         <h3 className={styles.points}>{state.score} PTS</h3>
       </div>
@@ -163,18 +208,29 @@ const Game = ({ user }) => {
         {cases === "inactive" && inactiveCases()}
         {cases === "IAturn" && IACases()}
         {cases === "userTurn" && userCases()}
+        {cases === "true" && selectedCases()}
       </div>
       {!inProgress && (
-          <div className={styles.infos}>
-            <span className={styles.logo}>i</span>
-            Le but du jeu est de mémoriser les cases qui s'allument afin de
-            reproduire l'ordre par la suite. À chaque bon résultat, vous gagnez
-            un point et le niveau d'après commence. Bonne chance !
-            <button className={styles.button} onClick={() => debutGame()}>
-              Commencer
-            </button>
-          </div>
+        <div className={styles.infos}>
+          <span className={styles.logo}>i</span>
+          Le but du jeu est de mémoriser les cases qui s'allument afin de
+          reproduire l'ordre par la suite. À chaque bon résultat, vous gagnez un
+          point et le niveau d'après commence. Bonne chance !
+          <button className={styles.button} onClick={() => debutGame()}>
+            Commencer
+          </button>
+        </div>
       )}
+      {end[0] &&
+        <div className={styles.popup}>
+          <div className={styles.modal}>
+            <img src={finish} alt="finish" className={styles.finish} />
+            <h2 className={styles.finishTitle}>PARTIE TERMINÉ !</h2>
+            <p className={styles.finishText}>Votre score : {end[1]}</p>
+            <button className={styles.return} onClick={reset}>REVENIR</button>
+          </div>
+        </div>
+      }
     </div>
   );
 };

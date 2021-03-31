@@ -92,7 +92,7 @@
 }
 
 .inputError {
-    border: 2px solid #ff4757;
+    border: 2px solid #e66767;
 }
 
 .input::placeholder {
@@ -125,7 +125,7 @@
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: 14px;
-    color: #ff4757;
+    color: #e66767;
     font-style: italic;
 }
 

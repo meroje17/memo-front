@@ -2,26 +2,40 @@
     transform: scale(1.02);
 }
 
-.active, .true, .false, .inactive, .selectionable {
+.active, .true, .inactive, .selectionable {
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.inactive, .selectionable {
+.true, .inactive, .selectionable {
     background-color: #747d8c;
 }
 
-.true, .false, .active {
+.active {
     box-shadow: 0px 0px 10px #f1f2f6;
 }
 
-.true, .active {
+.active {
     background-color: #7bed9f;
-}
-
-.false {
-    background-color: #ff4757;
 }
 
 .inactive {
     pointer-events: none;
+}
+
+.success {
+    overflow: visible;
+    width: 23%;
+    animation: disparition 1s forwards;
+}
+
+@keyframes disparition {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
