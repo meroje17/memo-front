@@ -5,6 +5,12 @@
     margin-right: 20px;
 }
 
+@media screen and (max-width: 640px) {
+    .websiteTitle {
+      font-size: 5.5em;
+    }
+  }
+
 .green {
     color: #7bed9f;
 }
@@ -46,6 +52,15 @@
     animation: leftAppear 2.8s ease-out 0.8s forwards;
 }
 
+@media screen and (max-width: 640px) {
+    .centered {
+        margin: 10px;
+    }
+    .description {
+      font-size: 1em !important;
+    }
+  }
+
 .description {
     display: block;
     font-family: 'Roboto Mono', monospace;
@@ -62,6 +77,12 @@
     color: #7bed9f;
     margin-bottom: 35px;
 }
+
+@media screen and (max-width: 640px) {
+    .subtitle {
+      font-size: 1.2em;
+    }
+  }
 
 .bold {
     font-weight: 400;
@@ -87,6 +108,12 @@
     margin-bottom: 8px;
 }
 
+@media screen and (max-width: 640px) {
+    .input, .inputError {
+      width: 95%;
+    }
+  }
+
 .input {
     border: 1px solid #747d8c;
 }
@@ -110,6 +137,12 @@
     border: 1px solid #2f3542;
     outline: none;
 }
+
+@media screen and (max-width: 640px) {
+    .button {
+      font-size: 1em;
+    }
+  }
 
 .button:hover {
     transform: scale(1.02);
