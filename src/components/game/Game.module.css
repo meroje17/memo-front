@@ -1,35 +1,61 @@
 .profil {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    align-items: center;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+  .profil {
+    left: 50vw;
+    transform: translateX(-50%);
+  }
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 5px;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 640px) {
+  .avatar {
+    width: 20vw;
+    height: 20vw;
+  }
 }
 
 .username {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-    font-size: 18px;
-    color: #f1f2f6;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  color: #f1f2f6;
+}
+
+@media screen and (max-width: 640px) {
+  .username {
+    font-size: 1.3em;
+  }
 }
 
 .points {
-    text-align: center;
-    padding: 5px 20px;
-    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
-    border-radius: 10px;
-    color: #2f3542;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 700;
-    font-size: 14px;
+  text-align: center;
+  padding: 5px 20px;
+  background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
+  border-radius: 10px;
+  color: #2f3542;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 640px) {
+  .points {
+    font-size: 1.3em;
+  }
 }
 
 .gameOne,
@@ -38,183 +64,209 @@
 .gameFour,
 .gameFive,
 .gameSix {
-    display: grid;
-    row-gap: 15px;
-    column-gap: 15px;
+  display: grid;
+  row-gap: 15px;
+  column-gap: 15px;
+}
+@media screen and (max-width: 640px) {
+  .gameOne,
+  .gameTwo,
+  .gameThree,
+  .gameFour,
+  .gameFive,
+  .gameSix {
+    transform: translateY(8vh);
+  }
 }
 
 .gameOne {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .gameTwo {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .gameThree {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 
 .gameFour {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
 .gameFive {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 }
 
 .gameSix {
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
 }
 
 .gameContainer {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .infos {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    width: 15vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    row-gap: 20px;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.3em;
-    color: #2f3542;
-    border: 2px solid #747d8c;
-    border-radius: 10px;
-    padding: 40px 15px 15px 15px;
-    background-color: #f1f2f6;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  row-gap: 20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3em;
+  color: #2f3542;
+  border: 2px solid #747d8c;
+  border-radius: 10px;
+  padding: 40px 15px 15px 15px;
+  background-color: #f1f2f6;
+}
+
+@media screen and (max-width: 640px) {
+  .infos {
+    display: none;
+  }
 }
 
 .button {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
-    color: #2f3542;
-    border: 1px solid #747d8c;
-    outline: none;
-    box-shadow: 0px 0px 2px #2f3542;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
+  color: #2f3542;
+  border: 1px solid #747d8c;
+  outline: none;
+  box-shadow: 0px 0px 2px #2f3542;
+}
+
+@media screen and (max-width: 640px) {
+  .button {
+    position: absolute;
+    bottom: 20px;
+    left: 50vw;
+    font-size: 1.3em;
+    transform: translateX(-50%);
+  }
 }
 
 .button:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .logo {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-    font-size: 18px;
-    color: #2f3542;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #747d8c;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
-    box-shadow: 0px 0px 5px #2f3542;
-    overflow: visible;
-    position: absolute;
-    top: -20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  color: #2f3542;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #747d8c;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: linear-gradient(0.25turn, #7bed9f, #f1f2f6);
+  box-shadow: 0px 0px 5px #2f3542;
+  overflow: visible;
+  position: absolute;
+  top: -20px;
 }
 
-.popup {    
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: blur 1s forwards;
+.popup {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: blur 1s forwards;
 }
 
 .modal {
-    background-color: #f1f2f6;
-    border: 2px solid #747d8c;
-    box-shadow: 0px 0px 5px #2f3542;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 20px;
-    padding: 30px 0;
-    width: 260px;
-    animation: apparition 1s ease-out;
+  background-color: #f1f2f6;
+  border: 2px solid #747d8c;
+  box-shadow: 0px 0px 5px #2f3542;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  padding: 30px 0;
+  width: 260px;
+  animation: apparition 1s ease-out;
 }
 
 .finish {
-    height: 120px;
-    width: 120px;
+  height: 120px;
+  width: 120px;
 }
 
 .finishTitle {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 700;
-    font-size: 20px;
-    color: #2f3542;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  color: #2f3542;
 }
 
 .finishText {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 700;
-    font-size: 16px;
-    color: #2f3542;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: #2f3542;
 }
 
 .return {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: #747d8c;
-    color: #2f3542;
-    border: none;
-    outline: none;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #747d8c;
+  color: #2f3542;
+  border: none;
+  outline: none;
 }
 
 .return:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 @keyframes apparition {
-    from {
-        transform: translateY(-200%);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes blur {
-    from {
-        background-color: transparent;
-    }
-    to {
-        background-color: #747d8cb3;
-    }
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #747d8cb3;
+  }
 }

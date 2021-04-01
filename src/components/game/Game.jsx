@@ -8,7 +8,11 @@ import { initialValue, actions } from "../../utils/constant";
 import { reducer, randomCase } from "./Game.utils";
 
 const Game = ({ user }) => {
-  const [state, dispatch] = useReducer(reducer, initialValue);
+  const [state, dispatch] = useReducer(
+    reducer,
+    initialValue(window.screen.width <= 650)
+  );
+  const [isMobile, setIsMobile] = useState(window.screen.width <= 650);
   const [gameStyle, setGameStyle] = useState(styles.gameOne);
   const [cases, setCases] = useState("inactive");
   const [result, setResult] = useState([]);
@@ -30,7 +34,7 @@ const Game = ({ user }) => {
   useEffect(() => {
     const modulo = state.score % 5;
     if (modulo === 0 && state.score !== 0) {
-      dispatch(actions.changeLevel);
+      dispatch(actions(isMobile).changeLevel);
     } else if (state.score !== 0) {
       turnIA();
     }
@@ -91,7 +95,7 @@ const Game = ({ user }) => {
       setCases("true");
       if (result.length === newIndexChoice) {
         setIndexChoice(0);
-        dispatch(actions.addPoint);
+        dispatch(actions(isMobile).addPoint);
       }
     } else {
       setEnd([true, state.score]);
@@ -100,14 +104,14 @@ const Game = ({ user }) => {
       setIndexChoice(0);
       setIndexLight(0);
       setCases("inactive");
-      dispatch(actions.reset);
+      dispatch(actions(isMobile).reset);
     }
   };
 
   const reset = () => {
     setInProgress(false);
     setEnd([false, 0]);
-  }
+  };
 
   const userCases = () => {
     let casesArray = [];
@@ -221,16 +225,23 @@ const Game = ({ user }) => {
           </button>
         </div>
       )}
-      {end[0] &&
+      {end[0] && (
         <div className={styles.popup}>
           <div className={styles.modal}>
             <img src={finish} alt="finish" className={styles.finish} />
             <h2 className={styles.finishTitle}>PARTIE TERMINÉ !</h2>
             <p className={styles.finishText}>Votre score : {end[1]}</p>
-            <button className={styles.return} onClick={reset}>REVENIR</button>
+            <button className={styles.return} onClick={reset}>
+              REVENIR
+            </button>
           </div>
         </div>
-      }
+      )}
+      {(isMobile && !inProgress) && (
+        <button className={styles.button} onClick={() => debutGame()}>
+          Commencer
+        </button>
+      )}
     </div>
   );
 };

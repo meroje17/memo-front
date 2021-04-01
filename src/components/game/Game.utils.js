@@ -5,17 +5,19 @@ export function reducer(state, action) {
     case "ADD_POINT":
       return { ...state, score: state.score + 1 };
     case "CHANGE_LEVEL":
-      const nextLevel = state.level;
+      let nextLevel = state.level;
       if (state.level < 35) nextLevel++; 
       return {
         ...state,
-        nbCase: levels[nextLevel].case,
-        caseSize: levels[nextLevel].size,
-        repeat: levels[nextLevel].repeat,
+        nbCase: levels(action.isMobile, nextLevel).case,
+        caseSize: levels(action.isMobile, nextLevel).size,
+        repeat: levels(action.isMobile, nextLevel).repeat,
         level: nextLevel,
       };
     case "RESET":
-      return initialValue;
+      return initialValue(action.isMobile);
+    case "UPDATE_SIZE":
+      return {...state, caseSize: levels(action.isMobile, state.level).size }
     default:
       return state;
   }
